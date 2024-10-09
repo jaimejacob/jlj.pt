@@ -42,7 +42,7 @@ export const DATA = {
   location: "Caldas da Rainha, Portugal",
   description: "Project Manager & Web Developer",
   summary: "I’m a digital expert with a strong experience in Project / Product Management, Web Development, Customer Success & Technical Support.  ",
-  avatarUrl: "/jlj.jpeg",
+  avatarUrl: "/jaime.png",
   skills: [
     "React",
     "Next.js",
@@ -97,7 +97,7 @@ export const DATA = {
       },
       Email: {
         name: "Send Email",
-        url: "mailto:web.jlj.pt",
+        url: "mailto:web@jlj.pt",
         icon: Icons.email,
 
         navbar: true,

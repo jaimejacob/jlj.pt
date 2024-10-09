@@ -10,7 +10,7 @@ import Markdown from "react-markdown";
 import { Button } from "@/components/ui/button";
 import { Handshake, PanelsTopLeft, Workflow } from "lucide-react";
 import { MagicCard } from "@/components/magicui/magic-card";
-import RetroGrid from "@/components/magicui/retro-grid";
+import TestimonialsCarousel from "@/components/testimonials"
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -38,12 +38,12 @@ export default function Page() {
                 </Button></Link>
               </BlurFade>
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
+             <BlurFade delay={BLUR_FADE_DELAY}>
+              <Avatar className="size-32 border">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
-            </BlurFade>
+            </BlurFade> 
           </div>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <Markdown className="prose max-w-full font-sans text-md text-muted-foreground dark:prose-invert">
@@ -244,6 +244,34 @@ export default function Page() {
         </BlurFade>
       </section>
 
+      <section id="testimonials">
+        <BlurFade delay={BLUR_FADE_DELAY * 20}>
+          <div className="border rounded-xl p-10">
+            <div className="flex min-h-0 flex-col gap-y-3 py-4">
+            <BlurFade delay={BLUR_FADE_DELAY * 22}>
+                <div className="flex flex-col items-left justify-left space-y-4 text-left">
+                  <div className="space-y-2 mb-8">
+                    <div className="inline-block rounded-lg bg-secondary font-semibold text-black px-3 py-1 text-sm mb-2">
+                      Testimonials
+                    </div>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                      What clients say
+                    </h2>
+                    <p className="text-muted-foreground md:text-sm/relaxed lg:text-base/relaxed xl:text-sm/relaxed">
+                      I&apos;m always curious about the latest tech and love pushing myself to learn new things. Here are some of the tools and skills I use.
+                    </p>
+                  </div>
+                </div>
+              </BlurFade>
+              <div className="border rounded-lg p-20">
+              <TestimonialsCarousel />
+              </div>
+                
+            </div>
+          </div>
+        </BlurFade>
+      </section>
+
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:p-6 w-full pt-12">
           <BlurFade delay={BLUR_FADE_DELAY * 26}>
@@ -259,9 +287,9 @@ export default function Page() {
                 </Button></Link>
             </div>
           </BlurFade>
-          <div className="block flex flex-col h-[50px] w-full items-center justify-center overflow-hidden mt-[-500px] opacity-90 z-[-1]">
+          {/* <div className="block flex flex-col h-[50px] w-full items-center justify-center overflow-hidden mt-[-500px] opacity-90 z-[-1]">
             <RetroGrid />
-          </div>
+          </div> */}
         </div>
       </section>
     </main>
