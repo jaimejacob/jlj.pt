@@ -1,7 +1,8 @@
+'use client'
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Quote } from "lucide-react"
+import { Quote } from 'lucide-react'
 
 const testimonials = [
   {
@@ -13,39 +14,41 @@ const testimonials = [
   {
     name: "Tamila Kharambura & Paul Tulloch",
     role: "Directors, Hortênsia Music Festival",
-    content: "Jaime has been an invaluable asset to our music festival, contributing his expertise and artistic vision across various platforms. His designs enhance all aspects of our presentation, from our website to promotional materials like banners, posters, and booklets. He even creates captivating title pages for our key documents, always understanding and executing our vision perfectly. Jaime’s ability to refine details quickly and efficiently, combined with his positive, can-do attitude, makes him an essential part of our team. His talent and enthusiasm consistently leave us impressed and grateful for his work.",
+    content: "Jaime has been an invaluable asset to our music festival, contributing his expertise and artistic vision across various platforms. His designs enhance all aspects of our presentation, from our website to promotional materials like banners, posters, and booklets. He even creates captivating title pages for our key documents, always understanding and executing our vision perfectly. Jaime's ability to refine details quickly and efficiently, combined with his positive, can-do attitude, makes him an essential part of our team. His talent and enthusiasm consistently leave us impressed and grateful for his work. ",
     avatar: "/placeholder.svg?height=40&width=40"
   },
-  
 ]
 
 export default function TestimonialsCarousel() {
   return (
-    <div className="w-full px-5">
-      <Carousel>
-        <CarouselContent>
-          {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index}>
-              <div className="grid items-center justify-center align-middle p-6">
-                <div className="grid gap-2 lg:gap-50">
-                  <p className="text-xl lg:text-xl p-6">
-                    {testimonial.content}
-                  </p>
-                  <div className="flex items-center space-x-3 p-6">
-                    
-                    <div className="text-sm font-semibold mt-4">
-                      <div className="pt-5">{testimonial.name}</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</div>
-                    </div>
-                  </div>
+    <Carousel className="w-full px-4 sm:px-6">
+      <CarouselContent>
+        {testimonials.map((testimonial, index) => (
+          <CarouselItem key={index}>
+            <div className="p-4 border rounded-md mb-2">
+              <Quote className="w-6 h-6 text-muted-foreground mb-2" />
+              <p className="text-sm sm:text-base mb-4 text-muted-foreground">
+                {testimonial.content}
+              </p>
+              <div className="flex items-center space-x-3 gap-2">
+                <Avatar>
+                  <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                  <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                </Avatar>
+                <div>
+                  <div className="font-semibold text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <div className="flex justify-center mt-4 gap-2 space-x-2">
+        <CarouselPrevious className="relative left-0 right-auto translate-x-0 bg-background hover:bg-background/80" />
+        <CarouselNext className="relative left-auto right-0 translate-x-0 bg-background hover:bg-background/80" />
+      </div>
+    </Carousel>
   )
 }
+

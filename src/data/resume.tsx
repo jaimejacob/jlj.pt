@@ -234,7 +234,52 @@ export const DATA = {
       image: "/jljpt.png",
       video: "",
     },
-    
+    {
+      title: "KanaMastery",
+      href: "https://kanamastery.com",
+      project_type: "Personal Project",
+      active: true,
+      description:
+        "I created KanaMastery for myself as an alternative to RealKana.com with a modern user interface and experience. It has 2 game modes with various difficulties, a compact knowledge base with search, practice mode with hints, scores, custom end game messages, timer, animations, dark mode and more.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "ShadcnUI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://kanamastery.com",
+          icon: <Icons.globe className="size-3" />,
+        }
+      ],
+      image: "/kanamastery.png",
+      video: "",
+    },
+    {
+      title: "Criminalidade.pt",
+      href: "https://criminalidade.pt",
+      project_type: "Personal Project",
+      active: true,
+      description:
+        "Criminalidade.pt is a website that aims to make it easy for anyone to visualize the crime statistics in Portugal, in an easy and digestable way. It features 3 chart types and customization that allows anyone to see the growth and reduction of all the crime statistics in group or individually since 1993.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "ShadcnUI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://criminalidade.pt",
+          icon: <Icons.globe className="size-3" />,
+        }
+      ],
+      image: "/criminalidadept.png",
+      video: "",
+    },
   ],
   
 } as const;

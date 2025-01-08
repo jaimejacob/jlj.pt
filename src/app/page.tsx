@@ -246,11 +246,11 @@ export default function Page() {
 
       <section id="testimonials">
         <BlurFade delay={BLUR_FADE_DELAY * 20}>
-          <div className="border rounded-xl p-10">
-            <div className="flex min-h-0 flex-col gap-y-3 py-4">
-            <BlurFade delay={BLUR_FADE_DELAY * 22}>
+          <div className="border rounded-xl p-6 sm:p-8"> {/* Updated container */}
+            <div className="flex min-h-0 flex-col gap-y-6 py-4">
+              <BlurFade delay={BLUR_FADE_DELAY * 22}>
                 <div className="flex flex-col items-left justify-left space-y-4 text-left">
-                  <div className="space-y-2 mb-8">
+                  <div className="space-y-2 mb-4 sm:mb-8">
                     <div className="inline-block rounded-lg bg-secondary font-semibold text-black px-3 py-1 text-sm mb-2">
                       Testimonials
                     </div>
@@ -258,15 +258,14 @@ export default function Page() {
                       What clients say
                     </h2>
                     <p className="text-muted-foreground md:text-sm/relaxed lg:text-base/relaxed xl:text-sm/relaxed">
-                      I&apos;m always curious about the latest tech and love pushing myself to learn new things. Here are some of the tools and skills I use.
+                      Here's what some of my clients have to say about working with me.
                     </p>
                   </div>
                 </div>
               </BlurFade>
-              <div className="border rounded-lg p-20">
-              <TestimonialsCarousel />
+              <div className="w-full">
+                <TestimonialsCarousel />
               </div>
-                
             </div>
           </div>
         </BlurFade>
