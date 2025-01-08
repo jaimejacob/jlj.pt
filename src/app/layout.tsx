@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import Particles from "@/components/magicui/particles";
+import Script from "next/script";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -65,6 +66,22 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+      <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-K2VMMHFWLW"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K2VMMHFWLW');
+    `,
+          }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             <Particles
